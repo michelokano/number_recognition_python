@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Number Recognition</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    </head>
+    <body>
+        <div class="container">
+
+            {% block conteudo %} {% endblock %}
+
+            <script type="text" src="{{ url_for('static', filename='app.js') }}"></script>
+        </div>
+    </body>
+</html>

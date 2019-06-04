@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<table class="table table-striped table-responsive table-bordered">
+    <thead class="thead-default">
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Digits</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for image in list %}
+    <tr>
+        <td>
+            <figure class="thumb col-md-4">
+                <img class="img-responsive" src="{{ url_for('image', filename=image + '.jpg') }}">
+            </figure>
+        </td>
+        <td>{{ image }}</td>
+        <td>{{ list[image] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
