@@ -188,7 +188,14 @@ def number_recognition():
         except:
             digits = 0
 
-        cv2.imwrite("after_images/" + image + '.jpg', images_list[image])
+        scale_percent = 600  # percent of original size
+        width = int(images_list[image].shape[1] * scale_percent / 100)
+        height = int(images_list[image].shape[0] * scale_percent / 100)
+        dim = (width, height)
+        # resize image
+        resized = cv2.resize(images_list[image], dim, interpolation=cv2.INTER_AREA)
+
+        cv2.imwrite("after_images/" + image + '.png', resized)
 
         images_list[image] = None
         images_list[image] = digits
